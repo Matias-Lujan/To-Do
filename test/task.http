@@ -1,0 +1,34 @@
+@host=http://127.0.0.1:3001
+
+GET {{host}}/api/task
+
+###
+POST {{host}}/api/task
+Content-Type: application/json
+
+{
+    "tittle":"Ir al gym",
+    "description": "ir al gimnasio el martes",
+    "status":"incompleted"
+}
+
+###
+POST {{host}}/api/task
+Content-Type: application/json
+
+{
+    "tittle":"Leer",
+    "description": "leer al menos una pagina",
+    "status":"incompleted"
+}
+
+###
+DELETE {{host}}/api/task/7dfcddaf
+
+###
+PATCH {{host}}/api/task/cb9b68c4
+Content-Type: application/json
+
+{
+    "status":"incompleted"
+}
