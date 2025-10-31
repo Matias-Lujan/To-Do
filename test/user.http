@@ -1,0 +1,24 @@
+@host=http://127.0.0.1:3001
+
+GET {{host}}/api/user
+
+###
+POST {{host}}/api/user
+Content-Type: application/json
+
+{
+    "mail":"admin@to-do.com",
+    "password": "to-do123",
+    "name":"admin"
+}
+
+###
+DELETE {{host}}/api/user/b5c4afdb
+
+###
+PATCH {{host}}/api/user/2fb87737
+Content-Type: application/json
+
+{
+    "name":"admin0"
+}

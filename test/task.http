@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/api/task/7dfcddaf
+DELETE {{host}}/api/task/aaa
 
 ###
 PATCH {{host}}/api/task/cb9b68c4

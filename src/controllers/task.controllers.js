@@ -72,8 +72,8 @@ export const TaskController = {
     try {
       const task = await database.getById(id);
 
-      task.description = description;
-      task.status = status;
+      task.description = description ?? task.description;
+      task.status = status ?? task.status;
 
       const { oldDataTask, newDataTask } = await database.updateTask(task);
 
