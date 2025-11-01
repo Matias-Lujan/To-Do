@@ -1,0 +1,16 @@
+@host=http://127.0.0.1:3001
+@jwt_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN1cGVyQWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjE5NzI2NTQsImV4cCI6MTc2MjA1OTA1NH0.cIxsVMylYUGhzqCOwPnNmUTb8QU56LZiWg9m15u-YRc
+
+### LOGIN PARA OBTENER EL JWT- el token encripta el contenido que le paso
+POST {{host}}/user/login
+Content-Type: application/json
+
+{
+    "username": "SuperAdmin",
+    "password": "admin123456"
+}
+
+### OBTENER PRODUCTOS CON TOKEN JWT
+GET {{host}}/api/jwtoken/tasks
+Authorization: Bearer {{jwt_token}}
+Content-Type: application/json

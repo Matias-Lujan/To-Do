@@ -92,4 +92,17 @@ export const TaskController = {
       return;
     }
   },
+
+  getAllData: async (req, res) => {
+    const tasks = await database.getAllData();
+    const tasksObjectArray = tasks.map(
+      (task) => new Task(task?.id, task?.userId, task?.tittle, task?.description, task?.status),
+    );
+
+    res.json({
+      OK: true,
+      message: 'Lista de tareas disponibles solo para el admin',
+      payload: tasksObjectArray,
+    });
+  },
 };
